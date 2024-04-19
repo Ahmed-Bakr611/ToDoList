@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Add Task</h2>
+  <!-- Reference the form using #taskForm="ngForm" -->
+  <form #taskForm="ngForm" (ngSubmit)="addTask(taskForm)">
+      <div class="form-group">
+          <label for="title">Title</label>
+          <!-- Bind title input field to the component property -->
+          <input type="text" id="title" [(ngModel)]="title" name="title" class="form-control" required>
+      </div>
+      <div class="form-group">
+          <label for="description">Description</label>
+          <!-- Bind description input field to the component property -->
+          <input type="text" id="description" [(ngModel)]="description" name="description" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="due-date">Due Date</label>
+          <!-- Bind dueDate input field to the component property -->
+          <input type="date" id="due-date" [(ngModel)]="dueDate" name="dueDate" class="form-control" required>
+      </div>
+      <div class="d-flex justify-content-end mt-3">
+          <button type="submit" class="btn btn-primary mr-2" style="margin: 10px;">Save</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()" style="margin: 10px;">Cancel</button>
+      </div>
+  </form>
+</div>
